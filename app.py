@@ -57,4 +57,4 @@ def send_telegram_message(message):
     requests.get(telegram_url)
 
 loop = asyncio.get_event_loop()
-loop.run_until_complete(get_batches_and_send_message(8482999999))
+loop.run_until_complete(get_batches_and_send_message(8482997393))
