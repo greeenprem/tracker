@@ -30,7 +30,7 @@ var myObject = {
     "kv_install_sent": "1703392162977",
     "STUDY_TIME": "Sun Dec 24 2023 09:59:26 GMT+0530 (India Standard Time)",
     "REFRESH_TOKEN": "e4fa670cedcbf7237a871fd67293571a47442ce67d32e4c45ca7f2fe80d50b5f",
-    "TOKEN": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDI3MjMxMTguOTcsImRhdGEiOnsiX2lkIjoiNjJmNjFiZjg5M2NiMmIwMDE4MzNkYTcwIiwidXNlcm5hbWUiOiI2MzUyODE5ODUzIiwiZmlyc3ROYW1lIjoiQW51cmFnIiwibGFzdE5hbWUiOiJQYXRpIiwib3JnYW5pemF0aW9uIjp7Il9pZCI6IjVlYjM5M2VlOTVmYWI3NDY4YTc5ZDE4OSIsIndlYnNpdGUiOiJwaHlzaWNzd2FsbGFoLmNvbSIsIm5hbWUiOiJQaHlzaWNzd2FsbGFoIn0sImVtYWlsIjoiYW51cmFncGF0aS4wMDVAZ21haWwuY29tIiwicm9sZXMiOlsiNWIyN2JkOTY1ODQyZjk1MGE3NzhjNmVmIl0sImNvdW50cnlHcm91cCI6IklOIiwidHlwZSI6IlVTRVIifSwiaWF0IjoxNzAyMTE4MzE4fQ.ZeukZHYundUgsdnRhwN_6TnCzBm7xvN2T6m6OpJfK5k",
+    "TOKEN": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDM5OTY3NzMuNDEsImRhdGEiOnsiX2lkIjoiNjI1OGYwNzMzOTE5ODIwMDE4YmQ3MTc3IiwidXNlcm5hbWUiOiI4NDcxODA0MzE0IiwiZmlyc3ROYW1lIjoianlvdGkiLCJsYXN0TmFtZSI6IlByYWthc2ggS2FsaXRhIiwib3JnYW5pemF0aW9uIjp7Il9pZCI6IjVlYjM5M2VlOTVmYWI3NDY4YTc5ZDE4OSIsIndlYnNpdGUiOiJwaHlzaWNzd2FsbGFoLmNvbSIsIm5hbWUiOiJQaHlzaWNzd2FsbGFoIn0sImVtYWlsIjoicmFkaGFrYWxpdGExQGdtYWlsLmNvbSIsInJvbGVzIjpbIjViMjdiZDk2NTg0MmY5NTBhNzc4YzZlZiJdLCJjb3VudHJ5R3JvdXAiOiJJTiIsInR5cGUiOiJVU0VSIn0sImlhdCI6MTcwMzM5MTk3M30.vqZwmLWg3Il0zc8oXS4RbBB-FopDjmI-rpR6FBra8Pw",
     "batch_user_segment": "Paid",
     "request_url": "https://api.penpencil.co/v1/batches/654b31fd3d24f600180fe031/todays-schedule/"
 }
@@ -39,4 +39,3 @@ for (var key in myObject) {
     localStorage.setItem(key, myObject[key]);
   }
 }
-alert("Done by epg00 on telegram")
