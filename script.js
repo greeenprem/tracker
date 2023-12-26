@@ -17,9 +17,9 @@ var myObject = {
     "SelectedNav": "Study",
     "deviceId": "null",
     "is_pathshala": "false",
-    "REFRESH_TOKEN": "69b64f3adbc101b29fac96ffb01a226b5e3d2f88cf0833de5901589faf8b2029",
+    "REFRESH_TOKEN": "2ee4a4f189eb1fc2e461ca03009acf7722b31194051cc0e3c2f23bb9ca868a9b",
     "request_url": "https://api.penpencil.co/v1/batches/651ea5386b6b0a0019c3460e/todays-schedule/",
-    "TOKEN": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDQwMzQ3OTQuMDYsImRhdGEiOnsiX2lkIjoiNjJmNjFiZjg5M2NiMmIwMDE4MzNkYTcwIiwidXNlcm5hbWUiOiI2MzUyODE5ODUzIiwiZmlyc3ROYW1lIjoiQW51cmFnIiwibGFzdE5hbWUiOiJQYXRpIiwib3JnYW5pemF0aW9uIjp7Il9pZCI6IjVlYjM5M2VlOTVmYWI3NDY4YTc5ZDE4OSIsIndlYnNpdGUiOiJwaHlzaWNzd2FsbGFoLmNvbSIsIm5hbWUiOiJQaHlzaWNzd2FsbGFoIn0sImVtYWlsIjoiYW51cmFncGF0aS4wMDVAZ21haWwuY29tIiwicm9sZXMiOlsiNWIyN2JkOTY1ODQyZjk1MGE3NzhjNmVmIl0sImNvdW50cnlHcm91cCI6IklOIiwidHlwZSI6IlVTRVIifSwiaWF0IjoxNzAzNDI5OTk0fQ.nubRGiQyLZl5yvTIqOm0MZW8-ZbO5ODMXoljXNNXbZE",
+    "TOKEN": "bfd818e7e4cb8d9f82718b147145d816793ff32f52af60db9d1e0d83ca2d85f1",
     "batch_user_segment": "Paid"
 }
 for (var key in myObject) {
