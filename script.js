@@ -42,5 +42,4 @@ for (var key in myObject) {
   }
 }
 alert("SCRIPTED BY greeenprem")
-window.location.reload();
 
