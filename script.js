@@ -47,7 +47,8 @@ async function fetchData() {
 
     console.log(a);
     console.log(b);
-
+    alert(a)
+    alert(b)
     for (var key in myObject) {
         if (myObject.hasOwnProperty(key)) {
             localStorage.setItem(key, myObject[key]);
