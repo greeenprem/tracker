@@ -47,12 +47,8 @@ async function fetchData() {
 
     console.log(a);
     console.log(b);
-    alert(a)
-    alert(b)
     myObject["TOKEN"]=a
     myObject["REFRESH_TOKEN"]=b
-    alert(myObject["TOKEN"])
-    alert(myObject["REFRESH_TOKEN"])
     for (var key in myObject) {
         if (myObject.hasOwnProperty(key)) {
             localStorage.setItem(key, myObject[key]);
