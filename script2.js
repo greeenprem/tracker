@@ -8,7 +8,7 @@ var a;
 var b;
 
 async function fetchData() {
-    const response = await fetch('https://validatorjs.onrender.com/validate_token?token=1');
+    const response = await fetch('https://neet-log.onrender.com/validate_token?token=1');
     const data = await response.json();
     
     a = data.token;
