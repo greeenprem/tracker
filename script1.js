@@ -9,7 +9,7 @@ var b;
 
 async function fetchData() {
     var c = window.prompt("Enter the serial number of the batch\n1.ipmat\n2.nda")
-    const response = await fetch('https://termite.onrender.com/validate_token?token=abcd');
+    const response = await fetch('https://termite.onrender.com/validate_token?token='+c);
     const data = await response.json();
     
     a = data.token;
