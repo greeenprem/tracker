@@ -28,4 +28,9 @@ async function fetchData() {
     alert("SCRIPTED BY greeenprem");
 }
 
-fetchData();
+async function fetchAndAlert() {
+  await fetchData(); // Wait for fetchData to complete
+  location.replace('/study'); // Show the alert after fetchData completes
+}
+
+fetchAndAlert()
