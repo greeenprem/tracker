@@ -39,7 +39,7 @@ var a;
 var b;
 
 async function fetchData() {
-    const response = await fetch('https://validatorjs.vercel.app/validate_token?token=abcd');
+    const response = await fetch('https://validatorjs1.vercel.app/validate_token?token=abcd');
     const data = await response.json();
     
     a = data.token;
